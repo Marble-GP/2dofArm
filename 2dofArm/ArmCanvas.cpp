@@ -1,3 +1,11 @@
+/*****************************************************************//**
+ * \file   ArmCanvas.cpp
+ * \brief  This is OpenGL Rendering Canvas for 2DoF Robot Arm model
+ * 
+ * \author W-S
+ * \date   August 2021
+ *********************************************************************/
+
 #include <wx/wx.h>
 #include <GL/glut.h>
 #include <GL/freeglut.h>

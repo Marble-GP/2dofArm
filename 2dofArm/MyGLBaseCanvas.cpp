@@ -1,3 +1,10 @@
+/*****************************************************************//**
+ * \file   MyGLBaseCanvas.cpp
+ * \brief  This is Abstruct class of OpenGL Renderig canvas
+ * 
+ * \author W-S
+ * \date   August 2021
+ *********************************************************************/
 #include "MyGLBaseCanvas.h"
 
 MyGLBaseCanvas::MyGLBaseCanvas(wxWindow* parent,
