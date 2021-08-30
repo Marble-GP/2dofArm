@@ -38,14 +38,14 @@ void MyFrame1::OnRefchanged(wxSpinDoubleEvent& event)
         glpanel->q1 = m_spinCtrlDouble1->GetValue();
         glpanel->q2 = m_spinCtrlDouble2->GetValue();
     }
-    else//2自由度リンク機構 逆運動学ソルバーをそのまま適用
+    else//2自由度リンク機構 逆運動解をそのまま適用
     {
         float x, y,l, q1, q2;
         x = m_spinCtrlDouble3->GetValue();
         y = m_spinCtrlDouble4->GetValue();
         l = glpanel->arm_len;
         q1 = acos((x * x + y * y) / (2 * l * sqrt(x * x + y * y))) + atan2(y, x);
-        q2 = atan2((y - l * sin(q1)), (x - l * cos(q1)));
+        q2 = atan2((y - l * sin(q1)), (x - l * cos(q1))) - q1;
         glpanel->q1 = q1 * 180.0f / (float)M_PI;
         glpanel->q2 = q2 * 180.0f / (float)M_PI;
     }

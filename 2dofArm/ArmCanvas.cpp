@@ -39,7 +39,7 @@ void ArmCanvas::Render()
     glPushMatrix();
     {
         glTranslatef(base[0]+arm_len*cos((float)(q1*(float)M_PI/180.0f)), base[1] + arm_len * sin((float)(q1 * (float)M_PI / 180.0f)), 0.0f);
-        glRotatef(q2, 0.0, 0.0, 1.0);
+        glRotatef(q1+q2, 0.0, 0.0, 1.0);//‘æ1ƒA[ƒ€‚ğŠî€ü‚Æ‚µ‚ÄŠp“x‚È‚Ì‚Åq1+q2
     }
     glLineWidth(arm_width);
     glColor3fv(RGBA_greenf);
@@ -55,8 +55,8 @@ void ArmCanvas::Render()
         float x1, x2, y1, y2;
         x1 = arm_len * cos(q1*(float)M_PI/180.0f);
         y1 = arm_len * sin(q1 * (float)M_PI / 180.0f);
-        x2 = arm_len * cos(q2 * (float)M_PI / 180.0f) + x1;
-        y2 = arm_len * sin(q2 * (float)M_PI / 180.0f) + y1;
+        x2 = arm_len * cos((q1+q2) * (float)M_PI / 180.0f) + x1;
+        y2 = arm_len * sin((q1+q2) * (float)M_PI / 180.0f) + y1;
         snprintf(strbuf, 256, "q1: %f\nq2: %f\nx1: %f\ny1: %f\nx2: %f\n y2: %f\n\0",
             q1, q2, x1, y1, x2, y2);
         glRasterPos2f(-0.9, 0.9);
